@@ -10,24 +10,22 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.xin.spray.R;
 
-import org.w3c.dom.Text;
-
 public class PlaylistViewHolder extends RecyclerView.ViewHolder {
 
     private final TextView playlistSongName;
 
-    private final TextView playlistAlbum;
+    private final TextView playlistArtist;
 
     public PlaylistViewHolder(@NonNull View itemView) {
         super(itemView);
         playlistSongName = itemView.findViewById(R.id.playlist_song_name);
-        playlistAlbum = itemView.findViewById(R.id.playlist_album);
+        playlistArtist = itemView.findViewById(R.id.playlist_artist);
 
     }
 
-    public void bind(String songName, String album) {
+    public void bind(String songName, String artist) {
         playlistSongName.setText(songName);
-        playlistAlbum.setText(album);
+        playlistArtist.setText(artist);
     }
 
     static PlaylistViewHolder create(ViewGroup parent) {

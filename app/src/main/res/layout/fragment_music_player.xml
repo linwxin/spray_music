@@ -5,9 +5,133 @@
     android:layout_height="match_parent"
     tools:context=".ui.musicplayer.MusicPlayerFragment">
 
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Hello" />
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_marginBottom="?attr/actionBarSize"
+        android:layout_gravity="bottom"
+        android:layout_weight="1">
+
+
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/songImgPA"
+            android:layout_width="250dp"
+            android:layout_height="250dp"
+            android:layout_margin="10dp"
+            android:src="@drawable/tmp_player"/>
+
+        <TextView
+            android:id="@+id/songNamePA"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:textSize="18sp"
+            android:textColor="@color/black"
+            android:gravity="center"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:text="Song Name" />
+
+        <RelativeLayout
+            android:id="@+id/music_time"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/play_control"
+            android:layout_margin="15dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            android:layout_alignParentEnd="true" >
+
+            <!--设置播放时间的文本布局(起始)-->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/current_time"
+                android:text="00:00"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true" />
+
+            <!--设置播放进度条的布局-->
+            <SeekBar
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_toStartOf="@+id/total_time"
+                android:layout_toEndOf="@id/current_time"
+                android:paddingStart="15dp"
+                android:paddingEnd="15dp" />
+
+            <!--设置播放时间的文本布局(结束)-->
+            <TextView
+                android:id="@+id/total_time"
+                android:text="00:00"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true" />
+
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/play_control"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingBottom="20dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:paddingTop="10dp">
+
+            <!--设置播放顺序控制按钮的布局-->
+            <ImageView
+                android:id="@+id/play_mode"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:layout_marginEnd="25dp"
+                android:src="@drawable/ic_playrecycler" />
+
+            <!--设置上一曲按钮的布局-->
+            <ImageView
+                android:id="@+id/play_pre"
+                android:layout_height="60dp"
+                android:layout_width="60dp"
+                android:src="@drawable/ic_pre" />
+
+            <!--设置中间暂停和播放的按钮的布局-->
+            <ImageView
+                android:id="@+id/play_or_pause"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginStart="10dp"
+                android:src="@drawable/ic_play" />
+
+            <!--设置下一曲按钮的布局-->
+            <ImageView
+                android:id="@+id/play_next"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:src="@drawable/ic_next" />
+
+            <ImageView
+                android:id="@+id/playing_list"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginStart="25dp"
+                android:src="@drawable/ic_menu"/>
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+
 
 </FrameLayout>

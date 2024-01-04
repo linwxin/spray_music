@@ -28,11 +28,5 @@ public class MusicPlayerFragment extends Fragment {
         return inflater.inflate(R.layout.fragment_music_player, container, false);
     }
 
-    @Override
-    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
-        mViewModel = new ViewModelProvider(this).get(MusicPlayerViewModel.class);
-        // TODO: Use the ViewModel
-    }
 
 }
