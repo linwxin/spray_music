@@ -12,6 +12,7 @@
         android:textColor="@color/black"
         android:layout_marginStart="5dp"
         android:gravity="center_vertical"
+
         />
 
     <TextView
