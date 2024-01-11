@@ -91,6 +91,34 @@ public class PlayerService extends Service {
         playSongItem(currentMusic, isNeedReload);
     }
 
+    private void pauseInner() {
+        player.pause();
+        for (OnStateChangeListener listener : onStateChangeListeners) {
+            listener.onPause();
+        }
+    }
+
+    private void nextSongInner() {
+        if (playingMusicList.size() > 0) {
+            int curIndex = playingMusicList.indexOf(currentMusic);
+            int nextIndex = curIndex + 1 < playingMusicList.size() ? curIndex + 1 : 0;
+            Song nextSong = playingMusicList.get(nextIndex);
+            currentMusic = nextSong;
+            playSongItem(currentMusic, true);
+        }
+    }
+
+    private void preSongInner() {
+        if (playingMusicList.size() > 0) {
+            int curIndex = playingMusicList.indexOf(currentMusic);
+            int preIndex = curIndex - 1 > 0 ? curIndex - 1 : playingMusicList.size() - 1;
+            Song preSong = playingMusicList.get(preIndex);
+            currentMusic = preSong;
+            playSongItem(currentMusic, true);
+
+        }
+    }
+
     private void playSongItem(Song song, Boolean reload) {
         if (song == null) {
             return;
@@ -155,6 +183,23 @@ public class PlayerService extends Service {
 
         public boolean isPlaying() {
             return isPlayingInner();
+        }
+
+        public void pauseSong() {
+            pauseInner();
+        }
+
+        public void playSong() {
+            isNeedReload = false;
+            playInner();
+        }
+
+        public void nextSong() {
+            nextSongInner();
+        }
+
+        public void preSong() {
+            preSongInner();
         }
     }
 

@@ -17,14 +17,14 @@
 
 
         <com.google.android.material.imageview.ShapeableImageView
-            android:id="@+id/songImgPA"
+            android:id="@+id/play_song_img"
             android:layout_width="250dp"
             android:layout_height="250dp"
             android:layout_margin="10dp"
             android:src="@drawable/tmp_player"/>
 
         <TextView
-            android:id="@+id/songNamePA"
+            android:id="@+id/play_song_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="20dp"
