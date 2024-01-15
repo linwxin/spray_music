@@ -1,5 +1,9 @@
 package com.xin.spray.db.entity;
 
+
+import androidx.room.Entity;
+
+@Entity(tableName = "song")
 public class Song {
     private int id;
     private String title;
@@ -7,6 +11,8 @@ public class Song {
     private String artist;
 
     private String path;
+
+    private String belong;
 
     private int duration;
 
@@ -20,6 +26,7 @@ public class Song {
         this.title = title;
         this.artist = artist;
         this.path = path;
+        this.belong = "";
         this.duration = duration;
         this.size = size;
     }
@@ -75,5 +82,13 @@ public class Song {
 
     public void setSize(Long size) {
         this.size = size;
+    }
+
+    public String getBelong() {
+        return belong;
+    }
+
+    public void setBelong(String belong) {
+        this.belong = belong;
     }
 }
